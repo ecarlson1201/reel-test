@@ -1,0 +1,33 @@
+@media only screen and (min-width: 600px) {
+    .progressBar{
+        width: 90%;
+        display: inline-block;
+        height: 50px;
+    }
+
+    .percentSaved{
+        display: inline-block;
+        padding-right: 10px;
+    }
+
+    .item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: url('../assets/container-background.png');
+        padding: 10px;
+    }
+
+    .item:hover{
+        background-color: white;
+        transition-duration: 0.5s;
+        cursor: pointer;
+    }
+
+    .progressSection{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
