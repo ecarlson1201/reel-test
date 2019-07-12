@@ -6,7 +6,7 @@ import './float-grid.css'
 
 function App() {
   return (
-    <div className="row board">
+    <div className="row">
       <Search/>
       <ItemList/>
     </div>

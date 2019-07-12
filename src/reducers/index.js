@@ -8,15 +8,20 @@ import {
     SORT_LIST_STATUS_ACTIVE,
     SORT_LIST_STATUS_PAUSED,
     SEARCH_LIST,
-    CHANGE_STATUS
+    CHANGE_STATUS,
+    CHANGE_EXPAND
 } from '../actions'
 
 const initialState = {
     data: [
-        { name: 'BMW 328ci', status: 'Active', percentSaved: '30', total: '35000', visible: true },
-        { name: 'Gucci Belt', status: 'Paused', percentSaved: '90', total: '400', visible: true },
-        { name: 'MacBook', status: 'Paused', percentSaved: '45', total: '1500', visible: true },
-        { name: 'LG 4k tv', status: 'Active', percentSaved: '15', total: '2000', visible: true }
+        { name: 'BMW 328ci', status: 'Active', percentSaved: '30', total: '35000', visible: true, expanded: false },
+        { name: 'Gucci Belt', status: 'Paused', percentSaved: '90', total: '400', visible: true, expanded: false },
+        { name: 'MacBook', status: 'Paused', percentSaved: '45', total: '1500', visible: true, expanded: false },
+        { name: 'LG 4k tv', status: 'Active', percentSaved: '15', total: '2000', visible: true, expanded: false },
+        { name: 'PlayStation 4', status: 'Paused', percentSaved: '65', total: '260', visible: true, expanded: false },
+        { name: 'Lumix G7 Camera', status: 'Active', percentSaved: '75', total: '700', visible: true, expanded: false },
+        { name: 'iPhone X', status: 'Active', percentSaved: '15', total: '1000', visible: true, expanded: false },
+        { name: 'Oculus Rift S', status: 'Paused', percentSaved: '40', total: '399', visible: true, expanded: false },
     ]
 }
 
@@ -153,10 +158,12 @@ export default (state = initialState, action) => {
         case SEARCH_LIST:
             const searchedList = state.data.map((val, index) => {
                 let num = val.name.toLowerCase().search(action.text.toLowerCase())
-                if (num < 0) { val.visible = false } else {
-                    val.visible = true
-                }
-                return val
+                if (num < 0) {
+                    val.visible = false
+                } else {
+                    val.visible = true;
+                };
+                return val;
             });
             return Object.assign({}, state, {
                 data: [...searchedList]
@@ -173,6 +180,20 @@ export default (state = initialState, action) => {
             })
             return Object.assign({}, state, {
                 data: [...newData]
+            })
+
+        case CHANGE_EXPAND:
+            let expanded = state.data.map((val, index) => {
+                let newExpand = action.item.expanded === false ? true : false;
+                if (index !== action.item.index) {
+                    return val
+                }
+                return Object.assign({}, val, {
+                    expanded: newExpand
+                })
+            })
+            return Object.assign({}, state, {
+                data: [...expanded]
             })
         default: return state;
     };

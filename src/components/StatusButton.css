@@ -1,0 +1,13 @@
+.statusButton{
+    border: none;
+    padding: 5px;
+    font-family: 'Didact Gothic', 'Courier New', Courier, monospace;
+    border-radius: 2px;
+    background-color: #e2e2e3
+}
+
+.statusButton:hover{
+    cursor: pointer;
+    transition-duration: 0.2s;
+    background-color: #000000;
+}

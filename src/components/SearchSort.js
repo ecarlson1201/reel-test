@@ -47,28 +47,26 @@ export class Search extends React.Component {
     render() {
         return (
             <div className='row'>
-                <div className='col-12 searchSort'>
-                    <div className='col-6'>
-                        <div className='search'><span>Search: </span>
-                            <input type="text" ref={input => this.textInput = input} onKeyUp={(input) => this.searchList(input)} />
+                <nav className='searchSort'>
+                        <div className='col-6'>
+                            <div className='search'><span id='search-text'>Search: </span>
+                                <input id='search-input' type="text" ref={input => this.textInput = input} onKeyUp={(input) => this.searchList(input)} />
+                            </div>
+                            <div className="dropdown">
+                                <button className="dropbtn">Sort By</button>
+                                <ul className="dropdown-content">
+                                    <li className='sort-list' onClick={() => this.sortListAZ()}>Alphabetically (A-Z)</li>
+                                    <li className='sort-list' onClick={() => this.sortListZA()}>Alphabetically (Z-A)</li>
+                                    <li className='sort-list' onClick={() => this.sortListPercentHighLow()}>% Saved (High-Low)</li>
+                                    <li className='sort-list' onClick={() => this.sortListPercentLowHigh()}>% Saved (Low-High)</li>
+                                    <li className='sort-list' onClick={() => this.sortListTotalHighLow()}>Total (High-Low)</li>
+                                    <li className='sort-list' onClick={() => this.sortListTotalLowHigh()}>Total (Low-High)</li>
+                                    <li className='sort-list' onClick={() => this.sortListStatusActive()}>Status (Active)</li>
+                                    <li className='sort-list' onClick={() => this.sortListStatusPaused()}>Status (Paused)</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-6">
-                        <div className="dropdown">
-                            <button className="dropbtn">Sort By</button>
-                            <ul className="dropdown-content">
-                                <li className='sort-list' onClick={() => this.sortListAZ()}>Alphabetically (A-Z)</li>
-                                <li className='sort-list' onClick={() => this.sortListZA()}>Alphabetically (Z-A)</li>
-                                <li className='sort-list' onClick={() => this.sortListPercentHighLow()}>% Saved (High-Low)</li>
-                                <li className='sort-list' onClick={() => this.sortListPercentLowHigh()}>% Saved (Low-High)</li>
-                                <li className='sort-list' onClick={() => this.sortListTotalHighLow()}>Total (High-Low)</li>
-                                <li className='sort-list' onClick={() => this.sortListTotalLowHigh()}>Total (Low-High)</li>
-                                <li className='sort-list' onClick={() => this.sortListStatusActive()}>Status (Active)</li>
-                                <li className='sort-list' onClick={() => this.sortListStatusPaused()}>Status (Paused)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                </nav>
             </div>
 
         );

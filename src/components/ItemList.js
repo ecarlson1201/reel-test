@@ -2,20 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Item from './Item'
+import ItemPreview from './ItemPreview'
 
 import '../float-grid.css'
 import './ItemList.css'
 
 export function ItemList(props) {
     const items = props.data.map((item, index) => {
-        if (item.visible === true) {
+        if (item.visible === true && item.expanded === true) {
             return <li key={index}>
-                <Item index ={index}{...item} />
+                <Item index={index}{...item} />
+            </li>
+        } else if (item.visible === true && item.expanded === false) {
+            return <li key={index}>
+                <ItemPreview index={index}{...item} />
             </li>
         };
     });
     return (
-        <div>
+        <div className='board'>
             <ul>
                 {items}
             </ul>

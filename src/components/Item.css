@@ -1,13 +1,94 @@
+.Active, .Paused{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 2px;
+    font-size: 25px;
+    font-family: 'Italiana', Courier, monospace;
+    font-weight: bold;
+}
+
+.Active{
+    background-color: rgb(185, 219, 185);
+}
+
+.Paused{
+    background-color: rgb(231, 193, 193);
+}
+
+.statusButton{
+    border: none;
+    padding: 5px;
+    font-family: 'Didact Gothic', 'Courier New', Courier, monospace;
+    border-radius: 2px;
+}
+
+.statusButton:hover{
+    cursor: pointer;
+    background-color: rgb(196, 196, 196);
+    transition-duration: 0.75s;
+}
+
+.collapse{
+    position: relative;
+}
+
+.item:hover{
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.totalSection{
+    border: 1px solid rgb(182, 182, 182);
+    border-radius: 2px;
+}
+
+.progress-bar{
+    background-color: rgb(184, 184, 184);
+    border-radius: 5px;
+    width: 100%;
+    height: 20px;
+    display: inline-block;
+    text-align: left;
+}
+
+.progress-value{
+    align-content: left;
+    background-color: #9ec6ca;
+    transition: 0.3s all linear;
+    border-radius: 5px;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    animation: progress 2s ease-in-out forwards;
+    -webkit-animation: progress 2s ease-in-out forwards;
+}
+
+.percentSaved{
+    display: block;
+}
+
+@keyframes progress {
+    from {
+      width: 0;
+    }
+  }
+  
+  @-webkit-keyframes progress {
+    from {
+      width: 0;
+    }
+  }
+
 @media only screen and (min-width: 600px) {
-    .progressBar{
-        width: 90%;
-        display: inline-block;
+    .progress-bar{
         height: 50px;
     }
 
     .percentSaved{
-        display: inline-block;
-        padding-right: 10px;
+        font-size: 25px;
+        padding-bottom: 15px;
     }
 
     .item{
@@ -15,19 +96,15 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background-image: url('../assets/container-background.png');
+        background-color: #a1a5a6;
         padding: 10px;
-    }
-
-    .item:hover{
-        background-color: white;
-        transition-duration: 0.5s;
-        cursor: pointer;
+        border-radius: 2px;
     }
 
     .progressSection{
         display: flex;
         justify-content: center;
         align-items: center;
+        display: block;
     }
 }

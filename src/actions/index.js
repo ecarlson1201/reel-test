@@ -49,3 +49,9 @@ export const changeStatus = (item) => ({
     type: CHANGE_STATUS,
     item
 });
+
+export const CHANGE_EXPAND = 'CHANGE_EXPAND';
+export const changeExpand = (item) => ({
+    type: CHANGE_EXPAND,
+    item
+});
