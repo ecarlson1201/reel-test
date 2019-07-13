@@ -1,15 +1,35 @@
 .itemPreview{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #ffff;
     text-align: center;
-    background-color: #626f71;
-    padding: 10px;
-    border-radius: 2px;
 }
 
-.itemPreview:hover{
-    cursor: pointer;
-    transition-duration: 0.3s;
-    background-color: #a1a5a6;
+.percent-header{
+    font-family: 'Didact Gothic', 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: large;
+}
+
+@media only screen and (min-width: 600px) {
+    .itemPreview{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #e3e7ed;
+        padding: 10px;
+        border-radius: 2px;
+        border: 1px solid transparent;
+    }
+
+    .statusSection{
+        display: inline-block;
+    }
+
+    .itemPreview:hover{
+        cursor: pointer;
+        transition-duration: 0.2s;
+        background-color: #ffff;
+        border: 1px solid #bbc5d5;
+    }
 }

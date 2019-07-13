@@ -55,3 +55,8 @@ export const changeExpand = (item) => ({
     type: CHANGE_EXPAND,
     item
 });
+
+export const EXPAND_ALL = 'EXPAND_ALL';
+export const expandAll = () => ({
+    type: EXPAND_ALL
+});

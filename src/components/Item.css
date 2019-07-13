@@ -9,25 +9,17 @@
     font-weight: bold;
 }
 
+.Active, .Paused, h1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .Active{
     background-color: rgb(185, 219, 185);
 }
 
 .Paused{
     background-color: rgb(231, 193, 193);
-}
-
-.statusButton{
-    border: none;
-    padding: 5px;
-    font-family: 'Didact Gothic', 'Courier New', Courier, monospace;
-    border-radius: 2px;
-}
-
-.statusButton:hover{
-    cursor: pointer;
-    background-color: rgb(196, 196, 196);
-    transition-duration: 0.75s;
 }
 
 .collapse{
@@ -37,11 +29,6 @@
 .item:hover{
     cursor: pointer;
     transition-duration: 0.2s;
-}
-
-.totalSection{
-    border: 1px solid rgb(182, 182, 182);
-    border-radius: 2px;
 }
 
 .progress-bar{
@@ -69,26 +56,57 @@
     display: block;
 }
 
+.placeholder{
+    max-width: 150px;
+    margin: 15px;
+}
+
+.expanded-title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.item{
+    background-color: #ffffff;
+}
+
+.totalSection{
+    margin-bottom: 10px;
+}
+
+.progressSection{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 @keyframes progress {
     from {
-      width: 0;
+        width: 0;
     }
-  }
-  
-  @-webkit-keyframes progress {
-    from {
-      width: 0;
-    }
-  }
+}
 
-@media only screen and (min-width: 600px) {
+@-webkit-keyframes progress {
+    from {
+        width: 0;
+    }
+}
+
+@media only screen and (min-width: 600px) {  
+    .Active, .Paused, h1{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .titleSection{
+    text-align: left;
+    }
+
     .progress-bar{
         height: 50px;
     }
-
+    
     .percentSaved{
         font-size: 25px;
-        padding-bottom: 15px;
     }
 
     .item{
@@ -96,15 +114,43 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background-color: #a1a5a6;
-        padding: 10px;
+        background-color: #ffffff;
+        border: 1px solid #bbc5d5;
+        padding: 5px;
         border-radius: 2px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
-
+    
     .progressSection{
         display: flex;
         justify-content: center;
         align-items: center;
-        display: block;
+        margin-bottom: 0px;
+    }
+
+    .totalSection{
+        margin-bottom: 0px;
+        margin-left: 10px;
+    }
+
+    .progressSection{
+        margin-top: 0px;
+    }
+
+    .placeholder{
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width:601px){  
+    .placeholder{
+        max-width: 100px;
+    }
+
+    .progress-bar{
+        width: 250px;
+        height: 30px;;
     }
 }

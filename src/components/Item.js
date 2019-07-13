@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { changeStatus, changeExpand } from '../actions'
 
 import placeholder from '../assets/placeholder.png'
-import StatusButton from './StatusButton'
+import StatusButton from './statusButton'
 
-import './Item.css'
+import './item.css'
 
 export class Item extends React.Component {
     changeStatus(index) {
@@ -30,27 +30,36 @@ export class Item extends React.Component {
             };
         };
 
+        const progressCalc = index => {
+            let total = parseInt(this.props.data[index].total);
+            let percent = parseInt(this.props.data[index].percentSaved) / 100;
+            let remaining = total - total * percent;
+            return remaining.toFixed(2);
+        };
         return (
             <div className='row item' onClick={() => this.changeExpand(this.props)}>
                 <div className='col-3 titleSection'>
-                    <h1>{this.props.name}</h1>
+                    <h1 className='expanded-title'>{this.props.name}</h1>
+                    <span className='percentSaved'>Saved: {this.props.percentSaved}%</span>
+                    <span>${progressCalc(this.props.index)} remaining</span><br />
+                </div>
+                <div className='col-3 statusSection'>
                     <img className='placeholder' src={placeholder} alt="placeholder" />
                 </div>
-                <div className='col-2 statusSection'>
-                    <span className='percentSaved'>Progress: {this.props.percentSaved}%</span>
-                    <StatusButton item={this.props} />
-                </div>
                 <div className='col-6 progressSection'>
+                <StatusButton item={this.props} />
                     <div className='progress-bar'>
                         <span className='progress-value' style={progressColor()}></span>
                     </div>
-                </div>
-                <div className='col-1 totalSection'>
-                    <strong>Total: ${this.props.total}</strong>
+                    <strong className='totalSection'> Total:${this.props.total}</strong>
                 </div>
             </div>
         );
     };
 };
 
-export default connect()(Item);
+const mapStateToProps = state => ({
+    data: state.data
+});
+
+export default connect(mapStateToProps)(Item);

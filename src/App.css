@@ -1,6 +1,6 @@
 body{
     font-family: 'Didact Gothic', 'Courier New', Courier, monospace;
-    background-color: #fffbf7
+    background-color: #e3e7ed
 }
 
 h1{
@@ -9,13 +9,4 @@ h1{
 
 .board{
     margin-top: 100px;
-}
-
-@media only screen and (min-width: 600px) {
-    body{
-        background-color: #fffbf7;
-        background-size: cover;
-        height: 100%;
-        background-attachment: fixed;
-    }
 }

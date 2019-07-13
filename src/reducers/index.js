@@ -9,7 +9,8 @@ import {
     SORT_LIST_STATUS_PAUSED,
     SEARCH_LIST,
     CHANGE_STATUS,
-    CHANGE_EXPAND
+    CHANGE_EXPAND,
+    EXPAND_ALL
 } from '../actions'
 
 const initialState = {
@@ -22,7 +23,8 @@ const initialState = {
         { name: 'Lumix G7 Camera', status: 'Active', percentSaved: '75', total: '700', visible: true, expanded: false },
         { name: 'iPhone X', status: 'Active', percentSaved: '15', total: '1000', visible: true, expanded: false },
         { name: 'Oculus Rift S', status: 'Paused', percentSaved: '40', total: '399', visible: true, expanded: false },
-    ]
+    ],
+    expandAll: false
 }
 
 export default (state = initialState, action) => {
@@ -177,11 +179,10 @@ export default (state = initialState, action) => {
                 return Object.assign({}, val, {
                     status: newStatus
                 })
-            })
+            });
             return Object.assign({}, state, {
                 data: [...newData]
-            })
-
+            });
         case CHANGE_EXPAND:
             let expanded = state.data.map((val, index) => {
                 let newExpand = action.item.expanded === false ? true : false;
@@ -191,10 +192,21 @@ export default (state = initialState, action) => {
                 return Object.assign({}, val, {
                     expanded: newExpand
                 })
-            })
+            });
             return Object.assign({}, state, {
                 data: [...expanded]
-            })
+            });
+        case EXPAND_ALL:
+            let newState = !state.expandAll
+            let expandAll = state.data.map((val, index) => {
+                return Object.assign({}, val, {
+                    expanded: newState
+                });
+            });
+            return Object.assign({}, state, {
+                data: expandAll,
+                expandAll: newState
+            });
         default: return state;
     };
 };
