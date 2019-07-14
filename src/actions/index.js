@@ -77,3 +77,8 @@ export const CLICK_CALCULATE = 'CLICK_CALCULATE';
 export const clickCalculate = () => ({
     type: CLICK_CALCULATE
 });
+
+export const CLICK_DISPLAY_CALC = 'CLICK_DISPLAY_CALC';
+export const clickDisplayCalc = () => ({
+    type: CLICK_DISPLAY_CALC
+});

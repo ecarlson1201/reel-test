@@ -60,8 +60,8 @@ export class Calculator extends React.Component {
                         <li className='sort-list' onClick={() => this.clickCalcItem(2)}>All Items</li>
                     </ul>
                 </div>
-                <button id='calcButton' className='dropbtn' onClick={() => this.clickCalculate()}>Calculate</button>
-                <span id='calculated-amount'>${this.props.calculated}</span>
+                <button id='calcButton' className='dropbtn calcButton' onClick={() => this.clickCalculate()}>Calculate</button>
+                <span id='calculated-amount'>$ {this.props.calculated}</span>
             </div>
         );
     };

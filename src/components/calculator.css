@@ -1,6 +1,6 @@
 .calcContainer{
     vertical-align: middle;
-    margin-left: 100px;
+    border-left: 1px solid #ffffff;
 }
 
 .calculator-text{
@@ -29,16 +29,16 @@
     margin-left: 10px;
 }
 
-#calcButton{
+.calcButton{
     background-color: #8a9bb3;
     color: white;
-    border: 1px solid #ffffff;
+    border: 1px solid #ffffff !important;
     margin-left: 3px;
 }
 
-#calcButton:hover{
+.calcButton:hover{
     cursor: pointer;
-    background-color: #a9b4c5;
+    background-color: #a9b4c5 !important;
     transition-duration: 0.2s;
 }
 

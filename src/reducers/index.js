@@ -13,7 +13,8 @@ import {
     EXPAND_ALL,
     CLICK_CALC_ITEM,
     CLICK_CALC_PRICE,
-    CLICK_CALCULATE
+    CLICK_CALCULATE,
+    CLICK_DISPLAY_CALC
 } from '../actions'
 
 const initialState = {
@@ -30,7 +31,8 @@ const initialState = {
     expandAll: true,
     calcPrice: 0,
     calcItem: 0,
-    calculated: 0
+    calculated: 0,
+    displayCalc: false
 };
 
 export default (state = initialState, action) => {
@@ -225,14 +227,14 @@ export default (state = initialState, action) => {
             });
         case CLICK_CALCULATE:
             let activeItems = state.data.reduce((acc, val) => {
-                if (val.status === 'Active') {
+                if (val.status === 'Active' && val.visible === true) {
                     acc.push(val)
                 };
                 return acc;
             }, []);
 
             let expandedItems = state.data.reduce((acc, val) => {
-                if (val.expanded === true) {
+                if (val.expanded === true && val.visible === true) {
                     acc.push(val)
                 };
                 return acc;
@@ -290,6 +292,12 @@ export default (state = initialState, action) => {
             return Object.assign({}, state, {
                 calculated: newCalculated().toFixed(2)
             });
+            case CLICK_DISPLAY_CALC:
+                let newDisplayCalc = !state.displayCalc;
+                console.log(newDisplayCalc)
+                return Object.assign({}, state, {
+                    displayCalc: newDisplayCalc
+                });
         default: return state;
     };
 };

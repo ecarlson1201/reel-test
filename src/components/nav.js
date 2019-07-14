@@ -15,7 +15,8 @@ import {
     sortListStatusActive,
     sortListStatusPaused,
     searchList,
-    expandAll
+    expandAll,
+    clickDisplayCalc
 } from '../actions';
 
 import './nav.css';
@@ -52,7 +53,23 @@ export class Search extends React.Component {
     expandAll() {
         this.props.dispatch(expandAll());
     };
+    clickDisplayCalc() {
+        this.props.dispatch(clickDisplayCalc());
+    }
     render() {
+        const handleDisplayCalc = () => {
+            if (this.props.displayCalc === true) {
+                return <Calculator />
+            };
+        };
+
+        const handleDisplayCalcStyle = () => {
+            if (this.props.displayCalc === true) {
+                return 'Hide';
+            }else{
+                return 'Show'
+            };
+        };
         return (
             <div className='row'>
                 <nav role='navigation' className='searchSort'>
@@ -62,9 +79,6 @@ export class Search extends React.Component {
                             onBlur={(e) => e.target.placeholder = "Search"} placeholder='Search'
                             type="text" ref={input => this.textInput = input} onKeyUp={(input) => this.searchList(input)} />
                     </label>
-
-                    <button id='expandAll' onClick={() => this.expandAll()}>
-                        {this.props.expandAll === false ? "Expand All" : "Collapse All"}</button>
                     <div className="dropdown">
                         <button className="dropbtn">Sort By</button>
                         <ul className="dropdown-content">
@@ -78,7 +92,10 @@ export class Search extends React.Component {
                             <li className='sort-list' onClick={() => this.sortListStatusPaused()}>Status (Paused)</li>
                         </ul>
                     </div>
-                    <Calculator />
+                    <button id='expandAll' onClick={() => this.expandAll()}>
+                        {this.props.expandAll === false ? "Expand All" : "Collapse All"}</button>
+                    <button id='displayCalcButton' className='dropbtn calcButton' onClick={() => this.clickDisplayCalc()}>{handleDisplayCalcStyle()} Calculator</button>
+                    <div>{handleDisplayCalc()}</div>
                 </nav>
             </div>
 
@@ -87,7 +104,8 @@ export class Search extends React.Component {
 };
 
 const mapStateToProps = state => ({
-    expandAll: state.expandAll
+    expandAll: state.expandAll,
+    displayCalc: state.displayCalc
 });
 
 export default connect(mapStateToProps)(Search);
