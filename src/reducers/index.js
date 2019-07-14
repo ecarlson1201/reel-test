@@ -10,7 +10,10 @@ import {
     SEARCH_LIST,
     CHANGE_STATUS,
     CHANGE_EXPAND,
-    EXPAND_ALL
+    EXPAND_ALL,
+    CLICK_CALC_ITEM,
+    CLICK_CALC_PRICE,
+    CLICK_CALCULATE
 } from '../actions'
 
 const initialState = {
@@ -24,8 +27,11 @@ const initialState = {
         { name: 'iPhone X', status: 'Active', percentSaved: '15', total: '1000', visible: true, expanded: true },
         { name: 'Oculus Rift S', status: 'Paused', percentSaved: '40', total: '399', visible: true, expanded: true },
     ],
-    expandAll: true
-}
+    expandAll: true,
+    calcPrice: 0,
+    calcItem: 0,
+    calculated: 0
+};
 
 export default (state = initialState, action) => {
     switch (action.type) {
@@ -206,6 +212,83 @@ export default (state = initialState, action) => {
             return Object.assign({}, state, {
                 data: expandAll,
                 expandAll: newState
+            });
+        case CLICK_CALC_PRICE:
+            let newClickPrice = action.num;
+            return Object.assign({}, state, {
+                calcPrice: newClickPrice
+            });
+        case CLICK_CALC_ITEM:
+            let newClickItem = action.num;
+            return Object.assign({}, state, {
+                calcItem: newClickItem
+            });
+        case CLICK_CALCULATE:
+            let activeItems = state.data.reduce((acc, val) => {
+                if (val.status === 'Active') {
+                    acc.push(val)
+                };
+                return acc;
+            }, []);
+
+            let expandedItems = state.data.reduce((acc, val) => {
+                if (val.expanded === true) {
+                    acc.push(val)
+                };
+                return acc;
+            }, []);
+
+            let currSavedAmt = function (array) {
+                let total = 0;
+                for (let i = 0; i < array.length; i++) {
+                    let curr = parseInt(array[i].total) * (parseInt(array[i].percentSaved) / 100);
+                    total += curr;
+                };
+                return total;
+            };
+
+            let currAmtRemain = function (array) {
+                let total = 0;
+                for (let i = 0; i < array.length; i++) {
+                    let curr = parseInt(array[i].total) * (parseInt(array[i].percentSaved) / 100);
+                    let calcRemain = array[i].total - curr;
+                    total += calcRemain;
+                };
+                return total;
+            };
+
+            let totalPrice = function (array) {
+                let total = 0;
+                for (let i = 0; i < array.length; i++) {
+                    let curr = parseInt(array[i].total);
+                    total += curr;
+                };
+                return total;
+            };
+
+            let newCalculated = function () {
+                if (state.calcItem === 0 && state.calcPrice === 0) {
+                    return currSavedAmt(activeItems);
+                } else if (state.calcItem === 0 && state.calcPrice === 1) {
+                    return currAmtRemain(activeItems);
+                } else if (state.calcItem === 0 && state.calcPrice === 2) {
+                    return totalPrice(activeItems);
+                } else if (state.calcItem === 1 && state.calcPrice === 0) {
+                    return currSavedAmt(expandedItems);
+                } else if (state.calcItem === 1 && state.calcPrice === 1) {
+                    return currAmtRemain(expandedItems);
+                } else if (state.calcItem === 1 && state.calcPrice === 2) {
+                    return totalPrice(expandedItems);
+                } else if (state.calcItem === 2 && state.calcPrice === 0) {
+                    return currSavedAmt(state.data);
+                } else if (state.calcItem === 2 && state.calcPrice === 1) {
+                    return currAmtRemain(state.data);
+                } else if (state.calcItem === 2 && state.calcPrice === 2) {
+                    return totalPrice(state.data);
+                };
+            };
+            return Object.assign({}, state, {
+                calculated: newCalculated().toFixed(2)
             });
         default: return state;
     };

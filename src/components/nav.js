@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import searchIcon from '.././assets/search-icon.png';
 
+import Calculator from './calulator';
+
 import {
     sortListAZ,
     sortListZA,
@@ -14,9 +16,9 @@ import {
     sortListStatusPaused,
     searchList,
     expandAll
-} from '../actions'
+} from '../actions';
 
-import './nav.css'
+import './nav.css';
 
 export class Search extends React.Component {
     sortListAZ() {
@@ -76,6 +78,7 @@ export class Search extends React.Component {
                             <li className='sort-list' onClick={() => this.sortListStatusPaused()}>Status (Paused)</li>
                         </ul>
                     </div>
+                    <Calculator />
                 </nav>
             </div>
 

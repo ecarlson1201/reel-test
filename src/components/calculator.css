@@ -1,0 +1,48 @@
+.calcContainer{
+    vertical-align: middle;
+    margin-left: 100px;
+}
+
+.calculator-text{
+    color: #ffffff;
+    font-size: large;
+}
+
+.dropdown-icon{
+    max-width: 20px;
+}
+
+#calcPriceButton{
+    min-width: 175px !important;
+}
+
+#calcItemButton{
+    min-width: 125px;
+}
+
+#calcPriceList{
+    margin-left: 10px;
+}
+
+#calcItemList{
+    min-width: 125px;
+    margin-left: 10px;
+}
+
+#calcButton{
+    background-color: #8a9bb3;
+    color: white;
+    border: 1px solid #ffffff;
+    margin-left: 3px;
+}
+
+#calcButton:hover{
+    cursor: pointer;
+    background-color: #a9b4c5;
+    transition-duration: 0.2s;
+}
+
+#calculated-amount{
+    color: white;
+    font-size: 22px;
+}

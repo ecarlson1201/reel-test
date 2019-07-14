@@ -123,9 +123,9 @@
         align-items: center;
         text-align: center;
         background-color: #ffffff;
-        border-top: 1px solid #607796;
-        border-left: 1px solid #607796;
-        border-right: 1px solid #607796;
+        border-top: 1px solid #b6c6db;
+        border-left: 1px solid #b6c6db;
+        border-right: 1px solid #b6c6db;
         border-bottom: rgb(184, 184, 184);
         border-radius: 2px;
     }
@@ -137,9 +137,9 @@
     .progressSection{
         margin-bottom: 0px;
         margin-top: 0px;
-        border-bottom: 1px solid #607796;
-        border-left: 1px solid #607796;
-        border-right: 1px solid #607796;
+        border-bottom: 1px solid #b6c6db;
+        border-left: 1px solid #b6c6db;
+        border-right: 1px solid #b6c6db;
         padding: 0px !important;
     }
 

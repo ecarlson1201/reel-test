@@ -60,3 +60,20 @@ export const EXPAND_ALL = 'EXPAND_ALL';
 export const expandAll = () => ({
     type: EXPAND_ALL
 });
+
+export const CLICK_CALC_PRICE = 'CLICK_CALC_PRICE';
+export const clickCalcPrice = (num) => ({
+    type: CLICK_CALC_PRICE,
+    num
+});
+
+export const CLICK_CALC_ITEM = 'CLICK_CALC_ITEM';
+export const clickCalcItem = (num) => ({
+    type: CLICK_CALC_ITEM,
+    num
+});
+
+export const CLICK_CALCULATE = 'CLICK_CALCULATE';
+export const clickCalculate = () => ({
+    type: CLICK_CALCULATE
+});
