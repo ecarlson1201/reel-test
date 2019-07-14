@@ -9,6 +9,12 @@
     font-size: large;
 }
 
+#expand-icon{
+    visibility: hidden;
+    max-width: 21px;
+    max-height: 21px;
+}
+
 @media only screen and (min-width: 600px) {
     .Active, .Paused {
         display: inline-block;
@@ -41,5 +47,18 @@
 
     .previewHeader{
         text-align: left;
+        display: inline-block;
+    }
+
+    #expand-icon{
+        visibility: initial;
+        display: inline-block;
+        margin-top: 20px;
+        margin-right: 100px;
+        margin-left: 76px;
+    }
+
+    .previewHeaderContainer{
+        display: flex;
     }
 }

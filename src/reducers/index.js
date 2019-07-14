@@ -24,7 +24,7 @@ const initialState = {
         { name: 'iPhone X', status: 'Active', percentSaved: '15', total: '1000', visible: true, expanded: true },
         { name: 'Oculus Rift S', status: 'Paused', percentSaved: '40', total: '399', visible: true, expanded: true },
     ],
-    expandAll: false
+    expandAll: true
 }
 
 export default (state = initialState, action) => {
