@@ -9,10 +9,8 @@ import './float-grid.css';
 function App() {
   return (
     <main role='main'>
-      <div className="row">
         <Search />
         <ItemList />
-      </div>
     </main>
   );
 };

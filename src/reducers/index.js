@@ -15,14 +15,14 @@ import {
 
 const initialState = {
     data: [
-        { name: 'BMW 328ci', status: 'Active', percentSaved: '30', total: '35000', visible: true, expanded: false },
-        { name: 'Gucci Belt', status: 'Paused', percentSaved: '90', total: '400', visible: true, expanded: false },
-        { name: 'MacBook', status: 'Paused', percentSaved: '45', total: '1500', visible: true, expanded: false },
-        { name: 'LG 4k tv', status: 'Active', percentSaved: '15', total: '2000', visible: true, expanded: false },
-        { name: 'PlayStation 4', status: 'Paused', percentSaved: '65', total: '260', visible: true, expanded: false },
-        { name: 'Lumix G7 Camera', status: 'Active', percentSaved: '75', total: '700', visible: true, expanded: false },
-        { name: 'iPhone X', status: 'Active', percentSaved: '15', total: '1000', visible: true, expanded: false },
-        { name: 'Oculus Rift S', status: 'Paused', percentSaved: '40', total: '399', visible: true, expanded: false },
+        { name: 'BMW 328ci', status: 'Active', percentSaved: '30', total: '35000', visible: true, expanded: true },
+        { name: 'Gucci Belt', status: 'Paused', percentSaved: '90', total: '400', visible: true, expanded: true },
+        { name: 'MacBook', status: 'Paused', percentSaved: '45', total: '1500', visible: true, expanded: true },
+        { name: 'LG 4k tv', status: 'Active', percentSaved: '15', total: '2000', visible: true, expanded: true },
+        { name: 'PlayStation 4', status: 'Paused', percentSaved: '65', total: '260', visible: true, expanded: true },
+        { name: 'Lumix G7 Camera', status: 'Active', percentSaved: '75', total: '700', visible: true, expanded: true },
+        { name: 'iPhone X', status: 'Active', percentSaved: '15', total: '1000', visible: true, expanded: true },
+        { name: 'Oculus Rift S', status: 'Paused', percentSaved: '40', total: '399', visible: true, expanded: true },
     ],
     expandAll: false
 }

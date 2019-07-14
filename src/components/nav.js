@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import searchIcon from '.././assets/search-icon.png';
+
 import {
     sortListAZ,
     sortListZA,
@@ -52,7 +54,8 @@ export class Search extends React.Component {
         return (
             <div className='row'>
                 <nav role='navigation' className='searchSort'>
-                    <label htmlFor="search-input">
+                    <label id='search-container' htmlFor="search-input">
+                        <img id='search-icon' src={searchIcon} alt="search-icon" />
                         <input name='search-input' id='search-input' onFocus={(e) => e.target.placeholder = ""}
                             onBlur={(e) => e.target.placeholder = "Search"} placeholder='Search'
                             type="text" ref={input => this.textInput = input} onKeyUp={(input) => this.searchList(input)} />
@@ -67,8 +70,8 @@ export class Search extends React.Component {
                             <li className='sort-list' onClick={() => this.sortListZA()}>Alphabetically (Z-A)</li>
                             <li className='sort-list' onClick={() => this.sortListPercentHighLow()}>% Saved (High-Low)</li>
                             <li className='sort-list' onClick={() => this.sortListPercentLowHigh()}>% Saved (Low-High)</li>
-                            <li className='sort-list' onClick={() => this.sortListTotalHighLow()}>Total (High-Low)</li>
-                            <li className='sort-list' onClick={() => this.sortListTotalLowHigh()}>Total (Low-High)</li>
+                            <li className='sort-list' onClick={() => this.sortListTotalHighLow()}>Total Price (High-Low)</li>
+                            <li className='sort-list' onClick={() => this.sortListTotalLowHigh()}>Total Price (Low-High)</li>
                             <li className='sort-list' onClick={() => this.sortListStatusActive()}>Status (Active)</li>
                             <li className='sort-list' onClick={() => this.sortListStatusPaused()}>Status (Paused)</li>
                         </ul>

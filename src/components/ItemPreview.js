@@ -12,13 +12,15 @@ export class Item extends React.Component {
     };
     render() {
         return (
-            <div className='row itemPreview' onClick={() => this.changeExpand(this.props)}>
-                <div className='col-3'>
-                    <h1>{this.props.name}</h1>
-                </div>
-                    <StatusButton item={this.props}/>
-                <div className='col-2 statusSection'>
-                    <div className={this.props.status}>{this.props.status} <span className='percent-header'>({this.props.percentSaved}%)</span></div>
+            <div className='itemContainer'>
+                <div className='row itemPreview' onClick={() => this.changeExpand(this.props)}>
+                    <div className='col-6'>
+                        <h1 className='previewHeader'>{this.props.name}</h1>
+                    </div>
+                    <div className='col-6 statusSection'>
+                        <StatusButton item={this.props} />
+                        <div className={this.props.status}>{this.props.status} <span className='percent-header'>({this.props.percentSaved}%)</span></div>
+                    </div>
                 </div>
             </div>
         );

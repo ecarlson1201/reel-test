@@ -20,9 +20,9 @@ export class Item extends React.Component {
         const progressColor = () => {
             let color;
             if (this.props.status === 'Active') {
-                color = '#b9dbb9'
+                color = 'rgb(159, 212, 159)'
             } else {
-                color = '#e7c1c1'
+                color = 'rgb(223, 139, 139)'
             };
             return {
                 width: `${this.props.percentSaved}%`,
@@ -37,21 +37,25 @@ export class Item extends React.Component {
             return remaining.toFixed(2);
         };
         return (
-            <div className='row item' onClick={() => this.changeExpand(this.props)}>
-                <div className='col-3 titleSection'>
-                    <h1 className='expanded-title'>{this.props.name}</h1>
-                    <span className='percentSaved'>Saved: {this.props.percentSaved}%</span>
-                    <span>${progressCalc(this.props.index)} remaining</span><br />
+            <div className='itemContainer'>
+                <div className='row item' onClick={() => this.changeExpand(this.props)}>
+                    <div className='col-6 titleSection'>
+                        <img className='placeholder' src={placeholder} alt="placeholder" />
+                        <h1 className='expanded-title'>{this.props.name}</h1>
+                    </div>
+                    <div className='col-6 infoContainer'>
+                        <StatusButton item={this.props} />
+                        <div className='infoSection'>
+                            <span className='percentSaved'><strong>Total Price:</strong> ${this.props.total}</span>
+                            <span className='percentSaved'><strong>Saved:</strong> {this.props.percentSaved}%</span>
+                            <span className='percentSaved'><strong>Remaining:</strong> ${progressCalc(this.props.index)}</span>
+                        </div>
+                    </div>
                 </div>
-                <div className='col-3 statusSection'>
-                    <img className='placeholder' src={placeholder} alt="placeholder" />
-                </div>
-                <div className='col-6 progressSection'>
-                <StatusButton item={this.props} />
+                <div className='row progressSection'>
                     <div className='progress-bar'>
                         <span className='progress-value' style={progressColor()}></span>
                     </div>
-                    <strong className='totalSection'> Total:${this.props.total}</strong>
                 </div>
             </div>
         );

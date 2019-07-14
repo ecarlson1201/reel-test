@@ -10,26 +10,36 @@
 }
 
 @media only screen and (min-width: 600px) {
+    .Active, .Paused {
+        display: inline-block;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 10px;
+    }
     .itemPreview{
         box-sizing: border-box;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        background-color: #e3e7ed;
-        padding: 10px;
+        background-color: #ffffff;
         border-radius: 2px;
         border: 1px solid transparent;
     }
 
     .statusSection{
         display: inline-block;
+        text-align: left;
     }
 
     .itemPreview:hover{
         cursor: pointer;
         transition-duration: 0.2s;
-        background-color: #ffff;
-        border: 1px solid #bbc5d5;
+        background-color: #ffffff;
+        border: 1px solid #607796;
+    }
+
+    .previewHeader{
+        text-align: left;
     }
 }
