@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { changeExpand } from '../actions';
 import StatusButton from './statusButton';
 
-import expandIcon from '.././assets/expand-icon.png'
+import expandIcon from '.././assets/expand-icon-2.png'
 
 import './itemPreview.css';
 

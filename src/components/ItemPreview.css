@@ -40,9 +40,8 @@
 
     .itemPreview:hover{
         cursor: pointer;
+        background-color: #f7f5f0;
         transition-duration: 0.2s;
-        background-color: #ffffff;
-        border: 1px solid #607796;
     }
 
     .previewHeader{

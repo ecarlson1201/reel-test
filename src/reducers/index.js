@@ -294,7 +294,6 @@ export default (state = initialState, action) => {
             });
             case CLICK_DISPLAY_CALC:
                 let newDisplayCalc = !state.displayCalc;
-                console.log(newDisplayCalc)
                 return Object.assign({}, state, {
                     displayCalc: newDisplayCalc
                 });

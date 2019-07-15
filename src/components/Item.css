@@ -12,11 +12,13 @@
 }
 
 .Active{
-    background-color: rgb(159, 212, 159);
+    color: #23be0e;
+    border: 1px solid #23be0e;
 }
 
 .Paused{
-    background-color: rgb(223, 139, 139);
+    color: #d41b1b;
+    border: 1px solid #d41b1b;
 }
 
 .collapse{
@@ -29,7 +31,7 @@
 }
 
 .progress-bar{
-    background-color: rgb(184, 184, 184);
+    background-color: #ddd;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
     width: 100%;
@@ -118,7 +120,7 @@
     }
 
     .progress-bar{
-        height: 25px;
+        height: 13px;
         width: 100%;
         border-bottom-left-radius: 2px;
         border-bottom-right-radius: 2px;
@@ -127,6 +129,7 @@
     .progress-value{
         border-bottom-left-radius: 2px;
         border-bottom-right-radius: 2px;
+        margin-bottom: 3px;
     }
 
     .item{
@@ -135,29 +138,23 @@
         align-items: center;
         text-align: center;
         background-color: #ffffff;
-        border-top: 1px solid #b6c6db;
-        border-left: 1px solid #b6c6db;
-        border-right: 1px solid #b6c6db;
-        border-bottom: rgb(184, 184, 184);
         border-radius: 2px;
+        box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
     }
 
     .item:hover{
-        background-color: #ffffff;
+        background-color: #f7f5f0;
+        transition-duration: 0.2s;
     }
     
     .progressSection{
         margin-bottom: 0px;
         margin-top: 0px;
-        border-bottom: 1px solid #b6c6db;
-        border-left: 1px solid #b6c6db;
-        border-right: 1px solid #b6c6db;
         padding: 0px !important;
     }
 
     .infoContainer{
         text-align: left;
-
     }
 
     .infoSection{
@@ -185,10 +182,6 @@
     .expanded-title{
         display: table-cell;
         vertical-align: middle;
-    }
-    
-    .itemContainer{
-        padding: 5px;
     }
 }
 

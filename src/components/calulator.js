@@ -61,7 +61,7 @@ export class Calculator extends React.Component {
                     </ul>
                 </div>
                 <button id='calcButton' className='dropbtn calcButton' onClick={() => this.clickCalculate()}>Calculate</button>
-                <span id='calculated-amount'>$ {this.props.calculated}</span>
+                <span id='calculated-amount'>${this.props.calculated}</span>
             </div>
         );
     };

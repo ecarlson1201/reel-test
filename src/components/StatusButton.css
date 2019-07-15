@@ -20,7 +20,7 @@
 }
 
 .button-image:hover{
-    background-color: rgb(223, 223, 223);
+    background-color: #ddd;
     transition-duration: 0.2s;
 }
 

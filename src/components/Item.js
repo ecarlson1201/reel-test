@@ -6,8 +6,6 @@ import { changeStatus, changeExpand } from '../actions';
 import placeholder from '../assets/placeholder.png';
 import StatusButton from './statusButton';
 
-import collapseIcon from '.././assets/collapse-icon.png';
-
 import './item.css';
 
 export class Item extends React.Component {
@@ -22,9 +20,9 @@ export class Item extends React.Component {
         const progressColor = () => {
             let color;
             if (this.props.status === 'Active') {
-                color = 'rgb(159, 212, 159)'
+                color = '#61c056'
             } else {
-                color = 'rgb(223, 139, 139)'
+                color = '#ee4d4d'
             };
             return {
                 width: `${this.props.percentSaved}%`,
@@ -48,11 +46,10 @@ export class Item extends React.Component {
                     <div className='col-6 infoContainer'>
                         <StatusButton item={this.props} />
                         <div className='infoSection'>
-                            <span className='percentSaved'><strong>Total Price:</strong> ${this.props.total}</span>
+                            <span className='percentSaved'><strong>Total Price:</strong> ${parseInt(this.props.total).toFixed(2)}</span>
                             <span className='percentSaved'><strong>Saved:</strong> {this.props.percentSaved}%</span>
                             <span className='percentSaved'><strong>Remaining:</strong> ${progressCalc(this.props.index)}</span>
                         </div>
-                        <img className='collapse-icon' src={collapseIcon} alt="collapse-icon"/>
                     </div>
                 </div>
                 <div className='row progressSection'>

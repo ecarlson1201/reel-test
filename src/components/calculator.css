@@ -1,11 +1,11 @@
 .calcContainer{
     vertical-align: middle;
-    border-left: 1px solid #ffffff;
 }
 
 .calculator-text{
-    color: #ffffff;
-    font-size: large;
+    color: #ddd;
+    font-size: small;
+    margin-right: 5px;
 }
 
 .dropdown-icon{
@@ -30,19 +30,33 @@
 }
 
 .calcButton{
-    background-color: #8a9bb3;
-    color: white;
-    border: 1px solid #ffffff !important;
+    color: #fbb100 !important;
     margin-left: 3px;
+    background-color: transparent;
+    font-weight: bold;
 }
 
 .calcButton:hover{
     cursor: pointer;
-    background-color: #a9b4c5 !important;
-    transition-duration: 0.2s;
+    color: #fac854 !important;
+    border: none !important;
+    border: 1px solid #6d5828 !important;
+    background-color: transparent;
 }
 
 #calculated-amount{
-    color: white;
+    color: #ddd;
     font-size: 22px;
+}
+
+#calcButton{
+    margin-left: 0px;
+}
+
+@media only screen and (min-width: 600px) {
+    .calcContainer{
+        border-left: 1px solid #5e5f5f;
+        border-right: 1px solid #5e5f5f;
+        padding-right: 13px;
+    }
 }
