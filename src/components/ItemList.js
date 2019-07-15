@@ -5,6 +5,7 @@ import Item from './item';
 import ItemPreview from './itemPreview';
 
 import '../float-grid.css';
+import './itemList.css'
 
 export function ItemList(props) {
     const items = props.data.map((item, index) => {
@@ -20,7 +21,7 @@ export function ItemList(props) {
     });
     return (
         <div className='board'>
-            <ul>
+            <ul className='itemList'>
                 {items}
             </ul>
         </div>
