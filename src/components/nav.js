@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import searchIcon from '.././assets/search-icon.png';
 
-import Calculator from './calulator';
+import Calculator from './calculator';
 
 import {
     sortListAZ,

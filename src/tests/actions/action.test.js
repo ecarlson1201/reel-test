@@ -11,6 +11,10 @@ import {
     CHANGE_STATUS,
     CHANGE_EXPAND,
     EXPAND_ALL,
+    CLICK_CALC_ITEM,
+    CLICK_CALC_PRICE,
+    CLICK_CALCULATE,
+    CLICK_DISPLAY_CALC,
     sortListAZ,
     sortListZA,
     sortListPercentHighLow,
@@ -22,7 +26,11 @@ import {
     searchList,
     changeStatus,
     changeExpand,
-    expandAll
+    expandAll,
+    clickCalcItem,
+    clickCalcPrice,
+    clickCalculate,
+    clickDisplayCalc,
 } from '../../actions';
 
 describe('sortListAZ', () => {
@@ -106,5 +114,33 @@ describe('expandAll', () => {
     it('Should return the action', () => {
         const action = expandAll();
         expect(action.type).toEqual(EXPAND_ALL);
+    });
+});
+
+describe('clickCalcItem', () => {
+    it('Should return the action', () => {
+        const action = clickCalcItem();
+        expect(action.type).toEqual(CLICK_CALC_ITEM);
+    });
+});
+
+describe('clickCalcPrice', () => {
+    it('Should return the action', () => {
+        const action = clickCalcPrice();
+        expect(action.type).toEqual(CLICK_CALC_PRICE);
+    });
+});
+
+describe('clickCalculate', () => {
+    it('Should return the action', () => {
+        const action = clickCalculate();
+        expect(action.type).toEqual(CLICK_CALCULATE);
+    });
+});
+
+describe('clickDisplayCalc', () => {
+    it('Should return the action', () => {
+        const action = clickDisplayCalc();
+        expect(action.type).toEqual(CLICK_DISPLAY_CALC);
     });
 });

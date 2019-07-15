@@ -8,10 +8,10 @@ import './float-grid.css';
 
 function App() {
   return (
-    <main role='main'>
+    <div>
         <Search />
         <ItemList />
-    </main>
+    </div>
   );
 };
 
