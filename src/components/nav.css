@@ -132,12 +132,39 @@
     width: 130px !important;
   }
 
+  @media only screen and (max-width: 1024px) and (min-width:601px){
+    #search-container{
+      height: fit-content;
+    }
+    #search-input{
+      width: 150px !important;
+      padding-left: 0;
+  }
+  .dropbtn, #expandAll{
+      font-size: small !important;
+      margin: 0 !important;
+      width: 75px !important;
+  }
+  #search-icon{
+    visibility: hidden;
+  }
+}
+
   @media only screen and (max-width: 600px) {
   *{
     text-align: center;
   }
   .searchSort{
       display: inherit;
+  }
+
+  .dropdown-content{
+    margin-top: -282px;
+  }
+
+  nav{ 
+    bottom: 0;
+    top: initial;
   }
 
   #expandAll{
