@@ -17,12 +17,12 @@ export class Item extends React.Component {
             <div className='itemContainer'>
                 <div className='row itemPreview' onClick={() => this.changeExpand(this.props)}>
                     <div className='col-6 previewHeaderContainer'>
-                        <img id='expand-icon' src={expandIcon} alt="expand-icon"/>
                         <h1 className='previewHeader'>{this.props.name}</h1>
                     </div>
                     <div className='col-6 statusSection'>
                         <StatusButton item={this.props} />
                         <div className={this.props.status}>{this.props.status} <span className='percent-header'>({this.props.percentSaved}%)</span></div>
+                        <img className='expand-icon' src={expandIcon} alt="expand-icon"/>
                     </div>
                 </div>
             </div>

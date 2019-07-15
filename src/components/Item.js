@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { changeStatus, changeExpand } from '../actions'
+import { changeStatus, changeExpand } from '../actions';
 
-import placeholder from '../assets/placeholder.png'
-import StatusButton from './statusButton'
+import placeholder from '../assets/placeholder.png';
+import StatusButton from './statusButton';
 
-import './item.css'
+import collapseIcon from '.././assets/collapse-icon.png';
+
+import './item.css';
 
 export class Item extends React.Component {
     changeStatus(index) {
@@ -50,6 +52,7 @@ export class Item extends React.Component {
                             <span className='percentSaved'><strong>Saved:</strong> {this.props.percentSaved}%</span>
                             <span className='percentSaved'><strong>Remaining:</strong> ${progressCalc(this.props.index)}</span>
                         </div>
+                        <img className='collapse-icon' src={collapseIcon} alt="collapse-icon"/>
                     </div>
                 </div>
                 <div className='row progressSection'>

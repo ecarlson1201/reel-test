@@ -78,6 +78,12 @@
     padding: 0px !important;
 }
 
+.collapse-icon{
+    visibility: hidden;
+    max-width: 25px;
+    max-height: 25px;
+}
+
 @keyframes progress {
     from {
         width: 0;
@@ -90,7 +96,14 @@
     }
 }
 
-@media only screen and (min-width: 600px) {  
+@media only screen and (min-width: 600px) {
+    .collapse-icon{
+        visibility: initial;
+        margin-top: 25px;
+        margin-right: 98px;
+        float: right;
+    } 
+
     .Active, .Paused{
         margin-top: 15px;
         margin-bottom: 15px;

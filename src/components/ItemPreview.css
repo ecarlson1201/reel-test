@@ -9,7 +9,7 @@
     font-size: large;
 }
 
-#expand-icon{
+.expand-icon{
     visibility: hidden;
     max-width: 21px;
     max-height: 21px;
@@ -48,14 +48,15 @@
     .previewHeader{
         text-align: left;
         display: inline-block;
+        margin-left: 195px;
     }
 
-    #expand-icon{
+    .expand-icon{
         visibility: initial;
-        display: inline-block;
         margin-top: 20px;
         margin-right: 100px;
         margin-left: 76px;
+        float: right;
     }
 
     .previewHeaderContainer{
