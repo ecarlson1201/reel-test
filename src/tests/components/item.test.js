@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { Provider } from 'react-redux';
 
 import Item from '../../components/item';
-import store from '../../store'
+import store from '../../store';
 
 describe('<Item />', () => {
     it('Renders without crashing', () => {

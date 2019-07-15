@@ -22,7 +22,7 @@ export class Item extends React.Component {
                     <div className='col-6 statusSection'>
                         <StatusButton item={this.props} />
                         <div className={this.props.status}>{this.props.status} <span className='percent-header'>({this.props.percentSaved}%)</span></div>
-                        <img className='expand-icon' src={expandIcon} alt="expand-icon"/>
+                        <img className='expand-icon' src={expandIcon} alt="expand-icon" />
                     </div>
                 </div>
             </div>

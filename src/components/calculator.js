@@ -5,7 +5,7 @@ import {
     clickCalcItem,
     clickCalcPrice,
     clickCalculate
-} from '../actions'
+} from '../actions';
 
 import './calculator.css';
 

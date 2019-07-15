@@ -15,7 +15,7 @@ import {
     CLICK_CALC_PRICE,
     CLICK_CALCULATE,
     CLICK_DISPLAY_CALC
-} from '../actions'
+} from '../actions';
 
 const initialState = {
     data: [
@@ -292,11 +292,11 @@ export default (state = initialState, action) => {
             return Object.assign({}, state, {
                 calculated: newCalculated().toFixed(2)
             });
-            case CLICK_DISPLAY_CALC:
-                let newDisplayCalc = !state.displayCalc;
-                return Object.assign({}, state, {
-                    displayCalc: newDisplayCalc
-                });
+        case CLICK_DISPLAY_CALC:
+            let newDisplayCalc = !state.displayCalc;
+            return Object.assign({}, state, {
+                displayCalc: newDisplayCalc
+            });
         default: return state;
     };
 };

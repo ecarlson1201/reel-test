@@ -66,7 +66,7 @@ export class Search extends React.Component {
         const handleDisplayCalcStyle = () => {
             if (this.props.displayCalc === true) {
                 return 'Hide';
-            }else{
+            } else {
                 return 'Show'
             };
         };

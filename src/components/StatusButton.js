@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { changeStatus } from '../actions'
+import { changeStatus } from '../actions';
 
-import playIcon from '../assets/play-icon.png'
-import pauseIcon from '../assets/pause-icon.png'
+import playIcon from '../assets/play-icon.png';
+import pauseIcon from '../assets/pause-icon.png';
 
-import './statusButton.css'
+import './statusButton.css';
 
 class StatusButton extends React.Component {
   handleClick = e => {

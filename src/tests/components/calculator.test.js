@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { Provider } from 'react-redux';
 
 import Calculator from '../../components/calculator';
-import store from '../../store'
+import store from '../../store';
 
 describe('<Calculator />', () => {
     it('Renders without crashing', () => {

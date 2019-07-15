@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Item from './item'
-import ItemPreview from './itemPreview'
+import Item from './item';
+import ItemPreview from './itemPreview';
 
-import '../float-grid.css'
+import '../float-grid.css';
 
 export function ItemList(props) {
     const items = props.data.map((item, index) => {
