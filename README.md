@@ -12,6 +12,9 @@ Eric Carlson
 
 (952)380-7713
 eric.paul.carlson@gmail.com
+
 [Portfolio Page](https://ecarlson1201.github.io/portfolio/)
+
 [Github](https://github.com/ecarlson1201)
+
 [LinkedIn](https://www.linkedin.com/in/eric-carlson-58924a35/)
