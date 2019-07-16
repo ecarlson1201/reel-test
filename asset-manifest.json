@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/reel-test/static/css/main.cae315e9.chunk.css",
+    "main.js": "/reel-test/static/js/main.b4519600.chunk.js",
+    "main.js.map": "/reel-test/static/js/main.b4519600.chunk.js.map",
+    "runtime~main.js": "/reel-test/static/js/runtime~main.b0ee3e10.js",
+    "runtime~main.js.map": "/reel-test/static/js/runtime~main.b0ee3e10.js.map",
+    "static/js/2.4a06c067.chunk.js": "/reel-test/static/js/2.4a06c067.chunk.js",
+    "static/js/2.4a06c067.chunk.js.map": "/reel-test/static/js/2.4a06c067.chunk.js.map",
+    "index.html": "/reel-test/index.html",
+    "precache-manifest.c380c2431e8fa08eb3cdab4cbaae4efc.js": "/reel-test/precache-manifest.c380c2431e8fa08eb3cdab4cbaae4efc.js",
+    "service-worker.js": "/reel-test/service-worker.js",
+    "static/css/main.cae315e9.chunk.css.map": "/reel-test/static/css/main.cae315e9.chunk.css.map",
+    "static/media/collapse-icon-2.png": "/reel-test/static/media/collapse-icon-2.8f663529.png",
+    "static/media/dropdown-icon.png": "/reel-test/static/media/dropdown-icon.2b5bfbf9.png",
+    "static/media/expand-icon-2.png": "/reel-test/static/media/expand-icon-2.1b8548c3.png",
+    "static/media/pause-icon.png": "/reel-test/static/media/pause-icon.898a8a63.png",
+    "static/media/placeholder.png": "/reel-test/static/media/placeholder.5ae67ded.png",
+    "static/media/play-icon.png": "/reel-test/static/media/play-icon.d879e082.png",
+    "static/media/search-icon.png": "/reel-test/static/media/search-icon.171123a3.png"
+  }
+}
