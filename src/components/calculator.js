@@ -7,19 +7,22 @@ import {
     clickCalculate
 } from '../actions';
 
+import dropDownIcon from '.././assets/dropdown-icon.png';
+
 import './calculator.css';
 
 export class Calculator extends React.Component {
     clickCalcItem(num) {
         this.props.dispatch(clickCalcItem(num));
+        this.props.dispatch(clickCalculate());
     };
 
     clickCalcPrice(num) {
         this.props.dispatch(clickCalcPrice(num));
+        this.props.dispatch(clickCalculate());
     };
 
     clickCalculate(num) {
-        this.props.dispatch(clickCalculate());
     };
 
     render() {
@@ -44,7 +47,9 @@ export class Calculator extends React.Component {
         return (
             <div className='calcContainer'>
                 <div className="dropdown">
-                    <button id='calcPriceButton' className="dropbtn">{handleCalcPrice()}</button>
+                    <button id='calcPriceButton' className="dropbtn">{handleCalcPrice()}
+                        <img className='dropDownIcon' src={dropDownIcon} alt="drop-down-icon" />
+                    </button>
                     <ul id='calcPriceList' className="dropdown-content calcPriceList">
                         <li className='sort-list' onClick={() => this.clickCalcPrice(0)}>Current Amount Saved</li>
                         <li className='sort-list' onClick={() => this.clickCalcPrice(1)}>Amount Remaining</li>
@@ -53,14 +58,15 @@ export class Calculator extends React.Component {
                 </div>
                 <span className='calculator-text'>of</span>
                 <div className="dropdown">
-                    <button id='calcItemButton' className="dropbtn">{handleCalcItem()}</button>
+                    <button id='calcItemButton' className="dropbtn">{handleCalcItem()}
+                        <img className='dropDownIcon' src={dropDownIcon} alt="drop-down-icon" />
+                    </button>
                     <ul id='calcItemList' className="dropdown-content">
                         <li className='sort-list' onClick={() => this.clickCalcItem(0)}>Active Items</li>
                         <li className='sort-list' onClick={() => this.clickCalcItem(1)}>Expanded Items</li>
                         <li className='sort-list' onClick={() => this.clickCalcItem(2)}>All Items</li>
                     </ul>
                 </div>
-                <button id='calcButton' className='dropbtn calcButton' onClick={() => this.clickCalculate()}>Calculate</button>
                 <span id='calculated-amount'>${this.props.calculated}</span>
             </div>
         );

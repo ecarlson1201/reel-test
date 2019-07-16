@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import searchIcon from '.././assets/search-icon.png';
+import dropDownIcon from '.././assets/dropdown-icon.png';
 
 import Calculator from './calculator';
 
@@ -16,7 +17,8 @@ import {
     sortListStatusPaused,
     searchList,
     expandAll,
-    clickDisplayCalc
+    clickDisplayCalc,
+    clickCalculate
 } from '../actions';
 
 import './nav.css';
@@ -55,6 +57,7 @@ export class Search extends React.Component {
     };
     clickDisplayCalc() {
         this.props.dispatch(clickDisplayCalc());
+        this.props.dispatch(clickCalculate());
     }
     render() {
         const handleDisplayCalc = () => {
@@ -80,7 +83,9 @@ export class Search extends React.Component {
                             type="text" ref={input => this.textInput = input} onKeyUp={(input) => this.searchList(input)} />
                     </label>
                     <div className="dropdown">
-                        <button className="dropbtn">Sort By</button>
+                        <button className="dropbtn">Sort By
+                            <img className='dropDownIcon' src={dropDownIcon} alt="drop-down-icon"/>
+                        </button>
                         <ul className="dropdown-content">
                             <li className='sort-list' onClick={() => this.sortListAZ()}>Alphabetically (A-Z)</li>
                             <li className='sort-list' onClick={() => this.sortListZA()}>Alphabetically (Z-A)</li>

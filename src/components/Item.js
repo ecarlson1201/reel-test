@@ -5,6 +5,7 @@ import { changeStatus, changeExpand } from '../actions';
 
 import placeholder from '../assets/placeholder.png';
 import StatusButton from './statusButton';
+import collapseIcon from '.././assets/collapse-icon-2.png'
 
 import './item.css';
 
@@ -44,6 +45,7 @@ export class Item extends React.Component {
                         <h1 className='expanded-title'>{this.props.name}</h1>
                     </div>
                     <div className='col-6 infoContainer'>
+                            <img className='collapseIcon' src={collapseIcon} alt="collapseIcon"/>
                         <StatusButton item={this.props} />
                         <div className='infoSection'>
                             <span className='percentSaved'><strong>Total Price:</strong> ${parseInt(this.props.total).toFixed(2)}</span>

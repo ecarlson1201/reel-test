@@ -6,6 +6,7 @@
     color: #ddd;
     font-size: small;
     margin-right: 5px;
+    margin-left: 5px;
 }
 
 .dropdown-icon{
@@ -13,11 +14,11 @@
 }
 
 #calcPriceButton{
-    min-width: 175px !important;
+    min-width: 195px !important;
 }
 
 #calcItemButton{
-    min-width: 125px;
+    min-width: 145px;
 }
 
 #calcPriceList{
@@ -51,6 +52,10 @@
 
 #calcButton{
     margin-left: 0px;
+}
+
+#calculated-amount{
+    color: #fbb100
 }
 
 @media only screen and (max-width: 1024px) and (min-width:601px){
